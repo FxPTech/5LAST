@@ -300,7 +300,7 @@ $(function () {
     `;
 
     if (getVal(user_name)) {
-      bbCode += `[SUB][IMG]https://i.imgur.com/ThPiUoI.png[/IMG][/SUB] [SIZE=5][URL="${getVal(profile_url)}"][COLOR=#daa520][SUP][U]${getVal(user_name)}[/U][/SUP][/COLOR][/URL][/SIZE] [SUB][IMG]https://i.imgur.com/ThPiUoI.png[/IMG][/SUB]`;
+      bbCode += `[SUB][/SUB] [SIZE=5][URL="${getVal(profile_url)}"][COLOR=#daa520][SUP][U]${getVal(user_name)}[/U][/SUP][/COLOR][/URL][/SIZE] [SUB][/SUB]`;
     } else {
       bbCode += `[SIZE=4][COLOR=#daa520][SUP]לצערנו לא נמצא משקיען[/SUP][/COLOR][/SIZE]`;
     }
@@ -311,7 +311,7 @@ $(function () {
     `;
 
     if (getVal(thread_link)) {
-      bbCode += `[IMG]https://i.imgur.com/ThPiUoI.png[/IMG] [SIZE=5][URL="${getVal(profile_url_thread)}"][COLOR=#daa520][SUP][U]${getVal(user_name_thread)}[/U][/SUP][/COLOR][/URL][/SIZE] [SUB][IMG]https://i.imgur.com/ThPiUoI.png[/IMG][/SUB]
+      bbCode += `[SIZE=5][URL="${getVal(profile_url_thread)}"][COLOR=#daa520][SUP][U]${getVal(user_name_thread)}[/U][/SUP][/COLOR][/URL][/SIZE] [SUB][/SUB]
     [SUB][SIZE=2][COLOR=#daa520][U]אשר פתח את האשכול:[/U] "[U][URL="${getVal(thread_link)}"]${getVal(thread_title)}[/URL][/U]"[/COLOR][/SIZE][/SUB]`;
     } else {
       bbCode += `[SIZE=4][COLOR=#daa520][SUP]לצערנו לא נמצא אשכול[/SUP][/COLOR][/SIZE]`;
