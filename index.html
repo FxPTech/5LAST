@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" nonce="e9d8c74c7d134d1abcabec90648" src="//local.adguard.org?ts=1592463931917&amp;type=content-script&amp;dmn=fxp-generator-tool.multiapple.repl.co&amp;css=1&amp;js=1&amp;gcss=1&amp;rel=1&amp;rji=1"></script>
+<script type="text/javascript" nonce="e9d8c74c7d134d1abcabec90648" src="//local.adguard.org?ts=1592463931917&amp;name=AdGuard%20Popup%20Blocker&amp;name=AdGuard%20Extra&amp;type=user-script"></script><link rel="shortcut icon" href="//static.fcdn.co.il/images3/fav.png">
+  <link rel="apple-touch-icon" href="//static.fcdn.co.il/css_static_main/logo512.png">
+  <meta name="color-scheme" content="light dark">
+  <link href="https://fonts.googleapis.com/css?family=Miriam+Libre:400,700&display=swap&subset=hebrew" rel="stylesheet">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>FxP Generator - ייצור קוד להכרזות והודעות פרטיות</title>
+</head>
+<body dir="rtl">
+<header>
+  <h1>FxP Generator - כלי לייצור קוד להכרזות והודעות פרטיות <span id="beta">Beta</span></h1>
+  <div id="msg">
+    &#9432; להזכירכם, בעת ההכרזה עליכם:
+    <ol>
+      <li>לבטל את הצגת החתימה בתגובה</li>
+      <li>למחוק את ההכרזה של השבוע הקודם</li>
+      <li>לעדכן את התאריך בכותרת האשכול</li>
+      <li>לשלוח קישור להכרזה בצירוף תיוג המפקח/ים באשכול הדיון</li>
+    </ol>
+  </div>
+  <div id="errMsg">
+    &#9888; אנא תקנו את השגיאות הבאות:
+    <ul></ul>
+  </div>
+</header>
+<main>
+  <section id="choose-type-section">
+    <select id="choose-type">
+      <option disabled selected>-- נא לבחור סוג --</option>
+      <option value="declaration-weekly-challenges">הכרזה - משקיען ואשכול השבוע</option>
+      <option value="pm-winner">הודעה פרטית - זכייה בווינר (משקיען/אשכול השבוע)</option>
+      <option value="pm-nick">הודעה פרטית - זכייה בשינוי ניק</option>
+      <option value="pm-subnick-text">הודעה פרטית - זכייה בשינוי תת ניק טקסט</option>
+      <option value="pm-subnick-img">הודעה פרטית - זכייה בשינוי תת ניק תמונה</option>
+      <option value="pm-champ">הודעה פרטית - זכייה בנקודת צ׳אמפ</option>
+      <option value="pm-fxp-points">הודעה פרטית - זכייה בנקודות FxP</option>
+    </select>
+    <select id="choose-role">
+      <option disabled selected>-- נא לבחור סוג --</option>
+      <option value="user-got-prize">משתמש שלא נוכח כרגע בדרגת פרס  - קיבל את הפרס</option>
+      <option value="user-entitled-prize">משתמש שנוכח כרגע בדרגת פרס (ווינר, צ'אמפ וכו') - זכאי לפרס</option>
+      <option value="mod-entitled">מנהל - זכאי לפרס</option>
+      <option value="team-entitled">חבר צוות (תוכן) שזכה בדרגת פרס - זכאי לפרס</option>
+    </select>
+  </section>
+  <section id="details-section">
+    <form id="details-form" action="">
+      <input type="text" id="forum-name" placeholder="שם הפורום">
+      <input type="hidden" id="forum-id">
+      <input type="text" id="user-name" placeholder="ניק הזוכה">
+      <input type="text" id="mod-name" placeholder="שמך הפרטי">
+      <input type="url" id="thread-link" placeholder="קישור לאשכול">
+      <input type="number" id="days-count" placeholder="כמות (ימים/נקודות)" min="1" pattern="\d*">
+      <div id="weekly-challenges-note">*במידה ואין משקיען/אשכול יש להשאיר את השדה ריק</div>
+    
+      <button type="submit" id="do-btn">בצע</button>
+      <img src="/images/bars-loader.svg" id="bars-loader">
+    </form>
+  </section>
+  <section id="generated-code-section">
+    <button id="copy-btn">העתק ופתח חלון שליחת הודעה</button>
+    <textarea id="generated-code" readonly rows="10">מייצר את הקוד, נא להמתין...</textarea>
+    <div id="fxp-placeholder"></div>
+  </section>
+</main>
+<footer>
+  נוצר על־ידי <a href="https://www.fxp.co.il/member.php?u=1026230">עידו - MultiApple</a> & <a href="https://www.fxp.co.il/member.php?u=750003">רז - DeLucifer</a> &copy;
+</footer>
+
+<div id="nightmode-btn-container"><div id="nightmode-btn"></div></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!--script type="text/javascript" src="js/jquery.ajax-cross-origin.min.js"></script-->
+<script src='js/script.js'></script>
+</body>
+</html>
