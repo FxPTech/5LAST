@@ -1,0 +1,270 @@
+:root {
+  color-scheme: light dark;
+  supported-color-schemes: light dark;
+  --nightmode-display: block;
+  --do-btn-bg: #EEE;
+  --copy-btn-bg: #DDD;
+  --input-border-color: #EEE;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --nightmode-display: none; */
+    --do-btn-bg: #444;
+    --copy-btn-bg: #333;
+    --input-border-color: #666;
+  }
+}
+
+*{
+  font-family: 'Miriam Libre', 'Open Sans Hebrew', Tahoma, Arial, sans-serif;
+}
+
+html.nightModeActive{
+  filter: invert(100%);
+  background-color: #444;
+}
+
+body{
+  max-width: 600px;
+  width: 98%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#nightmode-btn-container{
+  display: var(--nightmode-display);
+  position: absolute;
+  top: 0;
+}
+
+#nightmode-btn {
+  background: #000 url("/images/nightmode.svg") no-repeat center center;
+  background-size: 80%;
+  width: 1.8em;
+  height: 2.5em;
+  padding: 0.25em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px 0px, rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+#nightmode-btn:hover {
+  background-color: #444;
+}
+
+header h1{
+  text-align: center;
+}
+
+#beta{
+  font-size: 0.4em;
+  background-color: #fff3cd;
+  color: #444;
+  padding: 2px 4px;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+html.nightModeActive #beta{
+  filter: invert(100%);
+}
+
+#msg{
+  display: none;
+  max-width: 80%;
+  width: max-content;
+  margin: 0 auto;
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #bee5eb;
+  padding: 10px 20px 1px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#msg ol{
+  padding: 0;
+  counter-reset: item;
+  list-style: none;
+}
+
+#msg ol li:before{
+  content: counter(item) ". ";
+  counter-increment: item;
+  font-weight: bold;
+}
+
+#errMsg{
+  display: none;
+  max-width: 80%;
+  width: max-content;
+  margin: 0 auto;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 5px 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+#errMsg ul{
+  padding: 0;
+  counter-reset: item;
+  list-style: none;
+}
+
+#errMsg ul li:before{
+  content: "• ";
+  counter-increment: item;
+  font-weight: bold;
+}
+
+html.nightModeActive #msg, html.nightModeActive #errMsg{
+  filter: invert(80%) contrast(140%);
+}
+
+section{
+  width: 100%;
+}
+
+section#details-section{
+  text-align: center;
+  margin: 20px auto;
+}
+
+section#details-section #do-btn{
+  display: block;
+  width: 100%;
+  font-size: 1.4em;
+  margin-top: 10px;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px 0;
+  background-color: #EEE;
+  background-color: var(--do-btn-bg);
+}
+
+#copy-btn {
+  border: 1px solid #EEE;
+  border: 1px solid var(--input-border-color);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 5px 10px;
+  width: 50%;
+  min-width: max-content;
+  display: block;
+  margin: 0 auto;
+  font-size: 1em;
+  background-color: #DDD;
+  background-color: var(--copy-btn-bg);
+}
+
+#bars-loader{
+  display: none;
+}
+
+section#generated-code-section, section#details-section{
+  display: none;
+}
+
+section#generated-code-section #generated-code{
+  display: block;
+  margin: 0 auto;
+  width: 98%;
+}
+
+section input, #choose-type, #choose-role{
+  width: 28%;
+  font-size: 1.4em;
+  display: inline-block;
+  padding: 1% 2%;
+  border-radius: 5px;
+  border: 1px solid #EEE;
+  border: 1px solid var(--input-border-color);
+  margin: 1px;
+}
+
+#thread-link{
+  width: 61.4%;
+}
+
+#thread-link.full-width{
+  width: 94.8%;
+}
+
+#forum-name.half-width, #user-name.half-width{
+  width: 44.6%;
+}
+
+#choose-type, #choose-role{
+  width: 100%;
+  margin: 20px auto 0;
+  display: block;
+}
+
+#choose-role, #weekly-challenges-note, #winner-count{
+  display: none;
+}
+
+footer{
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.8em;
+  color: #999;
+}
+
+footer a{
+  color: #666;
+  text-decoration: none;
+}
+
+#fxp-placeholder{
+  display: none;
+}
+
+input.has-error {
+  border-color: #d00;
+  box-shadow: rgba(221, 0, 0, 0.16) 0px 2px 5px 1px, rgba(221, 0, 0, 0.12) 0px 0px;
+}
+
+html.nightModeActive input.has-error{
+  border-color: #2ff;
+  box-shadow: rrgba(34, 255, 255, 0.5) 0px 2px 5px 1px, rgba(34, 255, 255, 0.5) 0px 0px;
+}
+
+@media only screen and (max-width: 600px){
+  body{
+    margin-top: 2.5em;
+  }
+
+  section input, #choose-type, #choose-role{
+    font-size: 1.2em;
+  }
+
+  section input{
+    width: 27%;
+  }
+
+  #thread-link{
+    width: 60%;
+  }
+
+  #thread-link.full-width {
+    width: 92%;
+  }
+
+  #forum-name.half-width, #user-name.half-width {
+    width: 43.2%;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  section input, #choose-type, #choose-role{
+    font-size: 1em;
+  }
+}
